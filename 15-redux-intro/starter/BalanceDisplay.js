@@ -7,6 +7,7 @@ function formatCurrency(value) {
 
 function BalanceDisplay() {
   return <div className="balance">{formatCurrency(123456)}</div>;
+  console.log("test");
 }
 
 export default BalanceDisplay;
