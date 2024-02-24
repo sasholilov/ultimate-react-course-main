@@ -19,6 +19,10 @@ function reducer(state, action) {
       const newState = [...state];
       newState[action.payload].status = "progress";
       return newState;
+    case "progress":
+      const newStatePr = [...state];
+      newStatePr[action.payload].status = "done";
+      return newStatePr;
   }
 }
 
@@ -30,7 +34,7 @@ function App() {
       <AddToDo dispatch={dispatch} />
       <div className="boxes">
         <Todo state={state} dispatch={dispatch} />
-        <InProgress />
+        <InProgress state={state} dispatch={dispatch} />
         <Done />
       </div>
     </div>

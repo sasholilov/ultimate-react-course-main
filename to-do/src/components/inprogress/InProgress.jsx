@@ -1,21 +1,19 @@
 import "./InProgress.css";
+import TodoContent from "../TodoContent/TodoContent";
 
-function InProgress() {
+function InProgress({ state, dispatch }) {
+  const qty = state.filter((el) => el.status === "progress").length;
   return (
     <div className="list-block-progress">
-      <h3>Todo / X</h3>
-      <div className="item">
-        <p>Subject.................</p>
-        <input type="checkbox" />
-        <p>Subject.............</p>
-        <input type="checkbox" />
-        <p>Subject............</p>
-        <input type="checkbox" />
-        <p>Subj....</p>
-        <input type="checkbox" />
-      </div>
+      <h3>In Progress / {qty}</h3>
+      <TodoContent
+        state={state}
+        dispatch={dispatch}
+        status="progress"
+        type="progress"
+        buttonText="Done"
+      />
     </div>
   );
 }
-
 export default InProgress;

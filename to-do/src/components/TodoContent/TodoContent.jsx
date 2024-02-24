@@ -1,22 +1,22 @@
 import React from "react";
 
-function TodoContent({ state, dispatch }) {
+function TodoContent({ state, dispatch, status, type, buttonText }) {
+  const isHasStatus = state.some((element) => element.status === status);
+
   return (
     <>
-      {state.length > 1 ? (
+      {state.length > 1 && isHasStatus ? (
         <div className="item">
           {state
             .map((todo, index) => (
               <>
-                {todo.status === "pending" && (
+                {todo.status === status && (
                   <>
                     <p>{todo.subject}</p>
                     <button
-                      onClick={() =>
-                        dispatch({ type: "action", payload: index })
-                      }
+                      onClick={() => dispatch({ type: type, payload: index })}
                     >
-                      Action
+                      {buttonText}
                     </button>
                   </>
                 )}
