@@ -6,17 +6,23 @@ function TodoContent({ state, dispatch }) {
       {state.length > 1 ? (
         <div className="item">
           {state
-            .filter((s, i) => s.status == "pending")
             .map((todo, index) => (
               <>
-                <p>{todo.subject}</p>
-                <button
-                  onClick={() => dispatch({ type: "action", payload: index })}
-                >
-                  Action
-                </button>
+                {todo.status === "pending" && (
+                  <>
+                    <p>{todo.subject}</p>
+                    <button
+                      onClick={() =>
+                        dispatch({ type: "action", payload: index })
+                      }
+                    >
+                      Action
+                    </button>
+                  </>
+                )}
               </>
-            ))}
+            ))
+            .filter((s, i) => i > 0)}
         </div>
       ) : (
         <p>Nothing to do</p>
