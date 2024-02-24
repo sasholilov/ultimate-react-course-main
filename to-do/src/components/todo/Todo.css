@@ -1,0 +1,22 @@
+.list-block {
+  max-width: 200px;
+  text-align: center;
+  background-color: #579bfc;
+  border-radius: 10px;
+  padding: 5px 15px 5px 15px;
+}
+
+.list-block h3 {
+  color: aliceblue;
+  padding-bottom: 5px;
+}
+
+.item {
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px;
+  text-align: left;
+}
