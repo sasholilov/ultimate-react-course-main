@@ -1,21 +1,19 @@
 import "./Done.css";
+import TodoContent from "../TodoContent/TodoContent";
 
-function Done() {
+function Done({ state, dispatch }) {
+  const qty = state.filter((el) => el.status === "done").length;
   return (
     <div className="list-block-done">
-      <h3>Todo / X</h3>
-      <div className="item">
-        <p>Subject.................</p>
-        <input type="checkbox" />
-        <p>Subject.............</p>
-        <input type="checkbox" />
-        <p>Subject............</p>
-        <input type="checkbox" />
-        <p>Subj....</p>
-        <input type="checkbox" />
-      </div>
+      <h3>Done / {qty}</h3>
+      <TodoContent
+        state={state}
+        status="done"
+        type="done"
+        dispatch={dispatch}
+        buttonText="Hide"
+      />
     </div>
   );
 }
-
 export default Done;

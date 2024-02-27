@@ -23,6 +23,10 @@ function reducer(state, action) {
       const newStatePr = [...state];
       newStatePr[action.payload].status = "done";
       return newStatePr;
+    case "done":
+      const newStateDn = [...state];
+      newStateDn[action.payload].status = "deleted";
+      return newStateDn;
   }
 }
 
@@ -35,7 +39,7 @@ function App() {
       <div className="boxes">
         <Todo state={state} dispatch={dispatch} />
         <InProgress state={state} dispatch={dispatch} />
-        <Done />
+        <Done state={state} dispatch={dispatch} />
       </div>
     </div>
   );
