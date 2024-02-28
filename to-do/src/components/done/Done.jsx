@@ -11,7 +11,7 @@ function Done({ state, dispatch }) {
         status="done"
         type="done"
         dispatch={dispatch}
-        buttonText="Hide"
+        buttonText="Clear"
       />
     </div>
   );

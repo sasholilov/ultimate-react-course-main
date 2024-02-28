@@ -1,6 +1,6 @@
 import React from "react";
 
-function TodoContent({ state, dispatch, status, type, buttonText }) {
+function TodoContent({ state, dispatch, status, type, buttonText, children }) {
   const isHasStatus = state.some((element) => element.status === status);
 
   return (
@@ -25,7 +25,7 @@ function TodoContent({ state, dispatch, status, type, buttonText }) {
             .filter((s, i) => i > 0)}
         </div>
       ) : (
-        <p>Nothing to do</p>
+        <p>{children}</p>
       )}
     </>
   );

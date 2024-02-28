@@ -12,7 +12,7 @@ function InProgress({ state, dispatch }) {
         status="progress"
         type="progress"
         buttonText="Done"
-      />
+      ></TodoContent>
     </div>
   );
 }
